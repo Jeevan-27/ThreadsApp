@@ -31,7 +31,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 const allowedOrigins = [
-  "https://your-frontend.vercel.app", // <-- replace with your real deployed frontend URL
+  "https://threads-client-rho.vercel.app/",
 ];
 
 app.use(cors({
