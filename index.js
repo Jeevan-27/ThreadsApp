@@ -31,7 +31,8 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 const allowedOrigins = [
-  "https://threads-client-rho.vercel.app/",
+  "http://localhost:3000",
+  "https://threads-client-rho.vercel.app"
 ];
 
 app.use(cors({
@@ -42,7 +43,8 @@ app.use(cors({
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true, // if you're using cookies or authorization headers
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
